@@ -173,7 +173,7 @@ with tabs[1]:
 
     other = mix.loc[mix.denial_reason == "den_other", "share_of_denials"].iloc[0]
     st.warning(
-        f"**{other:.0%} of classified denials are reported as \"Other\".** Root-cause "
+        f"**{other:.0%} of denials are reported as \"Other\".** Root-cause "
         f"management is structurally limited by the payer reason taxonomy itself. "
         f"Recommendation BRD-021 addresses this: require CARC/RARC-level detail in "
         f"payer remittance before committing to category-level prevention targets.")
@@ -389,7 +389,8 @@ with tabs[5]:
     st.markdown(f"""
 - **CMS Transparency in Coverage PUF**, plan years 2022–2026, individual market QHP sheets.
   Issuer self-reported claims, denials, appeals, and enrollment. Downloaded from
-  `data.healthcare.gov`. Five schema generations harmonized; see `docs/DATA_DICTIONARY.md`.
+  `data.healthcare.gov`. Five plan years spanning three schema generations, harmonized
+  into one canonical model; see `docs/DATA_DICTIONARY.md`.
 - **CMS Medicare Inpatient Hospitals by Provider and Service**, DY2024
   ({claim_value['observed_source_rows']['inpatient']:,} rows).
 - **CMS Medicare Outpatient Hospitals by Provider and Service**, DY2024
