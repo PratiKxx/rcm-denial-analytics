@@ -1,67 +1,24 @@
 # Deployment
 
-The dashboard deploys to Streamlit Community Cloud on the free tier.
+The dashboard runs on Streamlit Community Cloud (free tier) at
+**https://claims-denial-analytics.streamlit.app/**, deployed from `main` in this repo.
 
 ---
 
-## Why this works without the raw data
+## Why the deploy is small
 
-`app.py` reads only `data/processed/` (3.5 MB), which **is** committed. The 554 MB of
-raw CMS source files are gitignored and are not needed at runtime — they are only
-required to re-run the pipeline. So the deployed app is small and fast.
+`app.py` reads only `data/processed/` and `outputs/` — about 3.7 MB, all committed. The
+554 MB of raw CMS source files are gitignored and aren't needed at runtime; they're only
+required to re-run the pipeline from scratch.
 
----
-
-## 1. Push to GitHub
-
-```bash
-git init
-git add .
-git commit -m "Claims denial analytics and recovery model"
-```
-
-Create an empty **public** repo on GitHub named `rcm-denial-analytics`, then:
-
-```bash
-git remote add origin https://github.com/<your-username>/rcm-denial-analytics.git
-git branch -M main
-git push -u origin main
-```
-
-Confirm before pushing that `data/raw/` is excluded:
-
-```bash
-git status --short | grep "data/raw" || echo "raw data correctly excluded"
-```
+I verified this by hiding `data/raw/` entirely and re-running the app's full load path
+before the first push, rather than finding out on the server.
 
 ---
 
-## 2. Deploy
+## Redeploying
 
-**One-click link** — this pre-fills the repo, branch, and entry point:
-
-https://share.streamlit.io/deploy?repository=PratiKxx/rcm-denial-analytics&branch=main&mainModule=app.py
-
-Sign in with GitHub, confirm the pre-filled form, and press **Deploy**. First build
-takes 2–3 minutes.
-
-Manual equivalent, if the link changes: go to https://share.streamlit.io → **New app**
-→ select `rcm-denial-analytics`, branch `main`, main file `app.py`.
-
-You get a URL like `https://rcm-denial-analytics.streamlit.app`.
-
----
-
-## 3. Custom URL
-
-In the app's **Settings → General**, set a subdomain. Something short reads better on
-a résumé — `claims-denial-analytics` or `denial-recovery-model`.
-
----
-
-## Redeploy after changes
-
-Streamlit Cloud auto-redeploys on push to `main`.
+Streamlit Cloud auto-redeploys on every push to `main`.
 
 ```bash
 git add -A
@@ -69,8 +26,8 @@ git commit -m "<what changed>"
 git push
 ```
 
-If you change anything in `src/`, regenerate outputs and docs before pushing so the
-deployed app and the generated documents stay in sync:
+Anything that touches `src/` needs the outputs and generated docs rebuilt first, or the
+deployed app and the committed documents drift apart:
 
 ```bash
 python run_pipeline.py --skip-download
@@ -78,6 +35,41 @@ python tests/test_uat.py
 python src/generate_rtm.py
 python src/generate_data_dictionary.py
 ```
+
+---
+
+## Deploying a fresh copy
+
+If this repo is ever forked or redeployed from scratch:
+
+1. https://share.streamlit.io → **New app** → this repo, branch `main`, main file `app.py`.
+   The pre-filled equivalent is
+   `share.streamlit.io/deploy?repository=<owner>/rcm-denial-analytics&branch=main&mainModule=app.py`.
+2. First build takes 2–3 minutes.
+3. **Settings → Sharing** → set viewer access to public. This is easy to miss; a newly
+   deployed app can default to requiring a Streamlit login, which makes the link useless
+   to anyone who isn't signed in. Verify with:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" https://claims-denial-analytics.streamlit.app/
+```
+
+`200` means public. `303` means it is redirecting to the auth gate and is still private.
+
+4. **Settings → General** sets the subdomain.
+
+---
+
+## Environment pins
+
+- `runtime.txt` pins Python 3.12. Without it, Cloud picks its own interpreter and every
+  unbounded `>=` resolves against an unknown version.
+- `requirements.txt` floors Streamlit at **1.49**, not lower. `app.py` passes
+  `width="stretch"` to `st.plotly_chart` and `st.dataframe`, which is the
+  post-deprecation layout API — earlier versions expect an int there and raise
+  `TypeError` on every chart.
+- `scipy` and `scikit-learn` are deliberately absent. Nothing imports them, and together
+  they add roughly 159 MB to every cold build.
 
 ---
 
@@ -98,15 +90,19 @@ Roughly 90 minutes of work.
 
 ## Troubleshooting
 
-**Module not found on Streamlit Cloud** — confirm `requirements.txt` is at the repo
-root and lists the package.
+**Link asks for a Streamlit login** — the app is private. Settings → Sharing → public.
+
+**Module not found on Cloud** — confirm `requirements.txt` is at the repo root and lists
+the package.
 
 **App can't find the parquet files** — confirm `data/processed/` was committed.
 `.gitignore` excludes `data/raw/` and `data/interim/` only:
 
 ```bash
-git ls-files data/processed | head
+git ls-files data/processed
 ```
 
-**App is slow on first load** — expected. `@st.cache_data` warms after the first
-request.
+**TypeError on chart render** — the resolved Streamlit version is below 1.49. See the
+environment pins above.
+
+**Slow first load** — expected. `@st.cache_data` warms after the first request.
