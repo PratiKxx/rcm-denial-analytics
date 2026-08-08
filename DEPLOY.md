@@ -38,9 +38,15 @@ git status --short | grep "data/raw" || echo "raw data correctly excluded"
 
 ## 2. Deploy
 
-1. Go to https://share.streamlit.io and sign in with GitHub.
-2. **New app** → select `rcm-denial-analytics`, branch `main`, main file `app.py`.
-3. Deploy. First build takes 2–3 minutes.
+**One-click link** — this pre-fills the repo, branch, and entry point:
+
+https://share.streamlit.io/deploy?repository=PratiKxx/rcm-denial-analytics&branch=main&mainModule=app.py
+
+Sign in with GitHub, confirm the pre-filled form, and press **Deploy**. First build
+takes 2–3 minutes.
+
+Manual equivalent, if the link changes: go to https://share.streamlit.io → **New app**
+→ select `rcm-denial-analytics`, branch `main`, main file `app.py`.
 
 You get a URL like `https://rcm-denial-analytics.streamlit.app`.
 
