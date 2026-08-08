@@ -4,8 +4,8 @@ Quantifies where commercial claim denials originate, what recovering and prevent
 them is worth, and which department owns the fix — built on five plan years of CMS
 Transparency in Coverage data covering **277 issuers and 1.88 billion claims**.
 
+**Live dashboard:** https://pratikxx-rcm-denial-analytics-app-nxqr62.streamlit.app/
 **Source:** https://github.com/PratiKxx/rcm-denial-analytics
-**Live dashboard:** *(one-click deploy per [`DEPLOY.md`](DEPLOY.md) — paste the URL here once live)*
 
 ---
 
