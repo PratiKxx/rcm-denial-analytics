@@ -1,0 +1,11 @@
+denial_reason,share_of_denials,denials_observed,root_cause,owner,x12_carc_examples,preventability,appealability,effort_hours,basis_plan_years
+den_other,0.6044762311355788,69314827.0,Unclassified,Revenue Integrity,n/a,0.4,0.4,2.0,4640
+den_administrative,0.15069188348557483,17279723.0,Mid-Cycle: Coding & Claim Submission,HIM / Coding,"CARC 16, 4, 11",0.8,0.7,0.75,4640
+den_service_excluded,0.10179184504021502,11672393.0,Benefit Design: Contractual Exclusion,Contracting / Benefits,"CARC 96, 204",0.25,0.15,2.0,4640
+den_referral_required,0.053084587160627694,6087169.0,Front-End: Authorization & Referral,Patient Access,"CARC 15, 197",0.85,0.55,1.0,4640
+den_out_of_network,0.023195776966681604,2659842.0,Front-End: Eligibility & Network Verification,Patient Access,"CARC 242, 243",0.7,0.3,1.5,4640
+den_benefit_limit,0.022984098568373634,2635569.0,Benefit Design: Benefit Maximum Reached,Contracting / Benefits,"CARC 119, 35",0.3,0.2,1.0,4640
+den_member_not_covered,0.02092136570022465,2399037.0,Front-End: Eligibility & Network Verification,Patient Access,"CARC 27, 31",0.9,0.25,0.5,4640
+den_med_nec_other,0.016860764790137477,1933411.0,Clinical: Medical Necessity,Clinical Documentation Improvement,"CARC 50, 55",0.45,0.75,3.0,4640
+den_med_nec_behavioral,0.005450049440026351,624953.0,Clinical: Medical Necessity (Behavioral Health),Clinical Documentation Improvement,CARC 50,0.4,0.8,3.5,4640
+den_investigational,0.0005433977125599556,62311.0,Clinical: Coverage Policy,Utilization Management,"CARC 55, 57",0.35,0.6,4.0,4640

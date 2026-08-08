@@ -1,0 +1,6 @@
+date_key,experience_year,plan_year_file,is_latest
+2020,2020,2022,False
+2021,2021,2023,False
+2022,2022,2024,False
+2023,2023,2025,False
+2024,2024,2026,True

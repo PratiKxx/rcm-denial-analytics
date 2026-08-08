@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+*.pyc
+.streamlit/secrets.toml
+
+# Local editor/tooling config — contains machine-specific absolute paths.
+.claude/
+
+# Private interview-prep notes. Written as coaching addressed to the author
+# ("don't oversell the dollar figure", "don't claim experience you don't have")
+# and not intended for a public audience. Delete this line to publish it.
+INTERVIEW_DEFENSE.md
+
+# Raw source files are large and re-downloadable via run_pipeline.py.
+# The 575 MB CMS physician file in particular must not be committed.
+data/raw/
+data/interim/
+
+probe*.py

@@ -1,0 +1,13 @@
+# streamlit>=1.49 is a hard floor, not a preference: app.py passes width="stretch"
+# to st.plotly_chart and st.dataframe, which is the post-deprecation layout API.
+# Earlier versions expect an int there and raise TypeError.
+streamlit>=1.49
+pandas>=2.0
+numpy>=1.26,<3
+plotly>=5.18
+pyarrow>=15.0
+
+# Pipeline only (not imported by the deployed app), kept so a clone can re-run
+# run_pipeline.py end to end.
+requests>=2.31
+openpyxl>=3.1

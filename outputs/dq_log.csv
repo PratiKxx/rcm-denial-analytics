@@ -1,0 +1,113 @@
+dq_id,severity,plan_year,field,finding,treatment,rows_affected
+DQ-010,Critical,n/a,MUP_OUT Avg_Mdcr_Alowd_Amt (scope),"The CMS outpatient file covers Comprehensive APCs only (63,518 priced rows across 68 procedural APC groups, averaging $5,123 per service). Routine outpatient volume (lab, imaging, clinic, therapy) is absent. Using this as the outpatient average overstates blended claim value roughly tenfold.",Outpatient split into a procedural bucket priced from observed C-APC data and an ancillary bucket derived from the professional per-line rate with a facility uplift,63518
+DQ-009,Critical,all,issuer_claims_* (denormalization),"Issuer-level values repeat across all plan rows. Naive summation yields 157,772,405,042 claims against a true 1,875,320,210, a 84.1x overstatement",Deduplicated to issuer-year grain before any issuer-level aggregation,25666
+DQ-003,High,2024,"Issuer_Claims_Denied_Out_of_Network""",Source header contains a stray trailing double quote,Mapped explicitly in config.COLUMN_MAP; a naive rename would drop the column,5050
+DQ-006,High,all,plan_denials_classified vs plan_claims_denied_total,6250 plan-years where reason categories do not reconcile to reported total denials within 2 percent,"Flagged via reason_reconciles=False; reason-mix analysis uses only reconciling rows, volume analysis uses all rows",6250
+DQ-007,High,all,denial_rate,1 plan-years report more denials than claims received,Coerced to NULL; a rate above 100 percent indicates a source reporting error,1
+DQ-001,Medium,2022,issuer_internal_appeals_filed,230 rows carry CMS suppression markers {'suppressed_small_cell': 230},Retained as NULL with a companion _flag column; excluded from rate denominators,230
+DQ-001,Medium,2022,issuer_internal_appeals_overturned,314 rows carry CMS suppression markers {'suppressed_small_cell': 314},Retained as NULL with a companion _flag column; excluded from rate denominators,314
+DQ-001,Medium,2022,issuer_external_appeals_filed,1337 rows carry CMS suppression markers {'suppressed_small_cell': 1337},Retained as NULL with a companion _flag column; excluded from rate denominators,1337
+DQ-001,Medium,2022,issuer_external_appeals_overturned,1815 rows carry CMS suppression markers {'suppressed_small_cell': 1815},Retained as NULL with a companion _flag column; excluded from rate denominators,1815
+DQ-001,Medium,2022,plan_claims_received_total,12 rows carry CMS suppression markers {'suppressed_small_cell': 12},Retained as NULL with a companion _flag column; excluded from rate denominators,12
+DQ-001,Medium,2022,plan_claims_denied_total,33 rows carry CMS suppression markers {'suppressed_small_cell': 33},Retained as NULL with a companion _flag column; excluded from rate denominators,33
+DQ-001,Medium,2022,den_referral_required,221 rows carry CMS suppression markers {'suppressed_small_cell': 221},Retained as NULL with a companion _flag column; excluded from rate denominators,221
+DQ-001,Medium,2022,den_service_excluded,216 rows carry CMS suppression markers {'suppressed_small_cell': 216},Retained as NULL with a companion _flag column; excluded from rate denominators,216
+DQ-001,Medium,2022,den_med_nec_other,454 rows carry CMS suppression markers {'suppressed_small_cell': 454},Retained as NULL with a companion _flag column; excluded from rate denominators,454
+DQ-001,Medium,2022,den_med_nec_behavioral,272 rows carry CMS suppression markers {'suppressed_small_cell': 272},Retained as NULL with a companion _flag column; excluded from rate denominators,272
+DQ-001,Medium,2022,den_other,43 rows carry CMS suppression markers {'suppressed_small_cell': 43},Retained as NULL with a companion _flag column; excluded from rate denominators,43
+DQ-001,Medium,2022,avg_monthly_enrollment,102 rows carry CMS suppression markers {'not_available': 102},Retained as NULL with a companion _flag column; excluded from rate denominators,102
+DQ-001,Medium,2022,avg_monthly_disenrollment,247 rows carry CMS suppression markers {'not_available': 247},Retained as NULL with a companion _flag column; excluded from rate denominators,247
+DQ-001,Medium,2023,issuer_internal_appeals_filed,324 rows carry CMS suppression markers {'suppressed_small_cell': 324},Retained as NULL with a companion _flag column; excluded from rate denominators,324
+DQ-001,Medium,2023,issuer_internal_appeals_overturned,608 rows carry CMS suppression markers {'suppressed_small_cell': 608},Retained as NULL with a companion _flag column; excluded from rate denominators,608
+DQ-001,Medium,2023,issuer_external_appeals_filed,1761 rows carry CMS suppression markers {'suppressed_small_cell': 1761},Retained as NULL with a companion _flag column; excluded from rate denominators,1761
+DQ-001,Medium,2023,issuer_external_appeals_overturned,1739 rows carry CMS suppression markers {'suppressed_small_cell': 1739},Retained as NULL with a companion _flag column; excluded from rate denominators,1739
+DQ-001,Medium,2023,plan_claims_received_total,2 rows carry CMS suppression markers {'suppressed_small_cell': 2},Retained as NULL with a companion _flag column; excluded from rate denominators,2
+DQ-001,Medium,2023,plan_claims_denied_total,37 rows carry CMS suppression markers {'suppressed_small_cell': 37},Retained as NULL with a companion _flag column; excluded from rate denominators,37
+DQ-001,Medium,2023,den_referral_required,213 rows carry CMS suppression markers {'suppressed_small_cell': 213},Retained as NULL with a companion _flag column; excluded from rate denominators,213
+DQ-001,Medium,2023,den_service_excluded,205 rows carry CMS suppression markers {'suppressed_small_cell': 205},Retained as NULL with a companion _flag column; excluded from rate denominators,205
+DQ-001,Medium,2023,den_med_nec_other,436 rows carry CMS suppression markers {'suppressed_small_cell': 436},Retained as NULL with a companion _flag column; excluded from rate denominators,436
+DQ-001,Medium,2023,den_med_nec_behavioral,307 rows carry CMS suppression markers {'suppressed_small_cell': 307},Retained as NULL with a companion _flag column; excluded from rate denominators,307
+DQ-001,Medium,2023,den_other,43 rows carry CMS suppression markers {'suppressed_small_cell': 43},Retained as NULL with a companion _flag column; excluded from rate denominators,43
+DQ-001,Medium,2024,issuer_claims_resubmitted_out,141 rows carry CMS suppression markers {'suppressed_small_cell': 141},Retained as NULL with a companion _flag column; excluded from rate denominators,141
+DQ-001,Medium,2024,issuer_claims_resubmitted_in,37 rows carry CMS suppression markers {'suppressed_small_cell': 37},Retained as NULL with a companion _flag column; excluded from rate denominators,37
+DQ-001,Medium,2024,issuer_internal_appeals_filed,126 rows carry CMS suppression markers {'suppressed_small_cell': 126},Retained as NULL with a companion _flag column; excluded from rate denominators,126
+DQ-001,Medium,2024,issuer_internal_appeals_overturned,365 rows carry CMS suppression markers {'suppressed_small_cell': 365},Retained as NULL with a companion _flag column; excluded from rate denominators,365
+DQ-001,Medium,2024,issuer_external_appeals_filed,2581 rows carry CMS suppression markers {'suppressed_small_cell': 2581},Retained as NULL with a companion _flag column; excluded from rate denominators,2581
+DQ-001,Medium,2024,issuer_external_appeals_overturned,3057 rows carry CMS suppression markers {'suppressed_small_cell': 3057},Retained as NULL with a companion _flag column; excluded from rate denominators,3057
+DQ-001,Medium,2024,plan_claims_received_out,201 rows carry CMS suppression markers {'suppressed_small_cell': 201},Retained as NULL with a companion _flag column; excluded from rate denominators,201
+DQ-001,Medium,2024,plan_claims_received_in,164 rows carry CMS suppression markers {'suppressed_small_cell': 164},Retained as NULL with a companion _flag column; excluded from rate denominators,164
+DQ-001,Medium,2024,plan_claims_denied_out,269 rows carry CMS suppression markers {'suppressed_small_cell': 269},Retained as NULL with a companion _flag column; excluded from rate denominators,269
+DQ-001,Medium,2024,plan_claims_denied_in,198 rows carry CMS suppression markers {'suppressed_small_cell': 198},Retained as NULL with a companion _flag column; excluded from rate denominators,198
+DQ-001,Medium,2024,plan_claims_resubmitted_out,650 rows carry CMS suppression markers {'suppressed_small_cell': 650},Retained as NULL with a companion _flag column; excluded from rate denominators,650
+DQ-001,Medium,2024,plan_claims_resubmitted_in,293 rows carry CMS suppression markers {'suppressed_small_cell': 293},Retained as NULL with a companion _flag column; excluded from rate denominators,293
+DQ-001,Medium,2024,den_referral_required,366 rows carry CMS suppression markers {'suppressed_small_cell': 366},Retained as NULL with a companion _flag column; excluded from rate denominators,366
+DQ-001,Medium,2024,den_out_of_network,561 rows carry CMS suppression markers {'suppressed_small_cell': 561},Retained as NULL with a companion _flag column; excluded from rate denominators,561
+DQ-001,Medium,2024,den_service_excluded,376 rows carry CMS suppression markers {'suppressed_small_cell': 376},Retained as NULL with a companion _flag column; excluded from rate denominators,376
+DQ-001,Medium,2024,den_med_nec_behavioral,1284 rows carry CMS suppression markers {'suppressed_small_cell': 1284},Retained as NULL with a companion _flag column; excluded from rate denominators,1284
+DQ-001,Medium,2024,den_benefit_limit,721 rows carry CMS suppression markers {'suppressed_small_cell': 721},Retained as NULL with a companion _flag column; excluded from rate denominators,721
+DQ-001,Medium,2024,den_member_not_covered,675 rows carry CMS suppression markers {'suppressed_small_cell': 675},Retained as NULL with a companion _flag column; excluded from rate denominators,675
+DQ-001,Medium,2024,den_investigational,1534 rows carry CMS suppression markers {'suppressed_small_cell': 1534},Retained as NULL with a companion _flag column; excluded from rate denominators,1534
+DQ-001,Medium,2024,den_administrative,418 rows carry CMS suppression markers {'suppressed_small_cell': 418},Retained as NULL with a companion _flag column; excluded from rate denominators,418
+DQ-001,Medium,2024,den_other,274 rows carry CMS suppression markers {'suppressed_small_cell': 274},Retained as NULL with a companion _flag column; excluded from rate denominators,274
+DQ-001,Medium,2024,avg_monthly_enrollment,78 rows carry CMS suppression markers {'suppressed_small_cell': 78},Retained as NULL with a companion _flag column; excluded from rate denominators,78
+DQ-001,Medium,2024,avg_monthly_disenrollment,275 rows carry CMS suppression markers {'suppressed_small_cell': 275},Retained as NULL with a companion _flag column; excluded from rate denominators,275
+DQ-001,Medium,2025,issuer_claims_resubmitted_out,58 rows carry CMS suppression markers {'suppressed_small_cell': 58},Retained as NULL with a companion _flag column; excluded from rate denominators,58
+DQ-001,Medium,2025,issuer_claims_resubmitted_in,30 rows carry CMS suppression markers {'suppressed_small_cell': 30},Retained as NULL with a companion _flag column; excluded from rate denominators,30
+DQ-001,Medium,2025,issuer_internal_appeals_filed,54 rows carry CMS suppression markers {'suppressed_small_cell': 54},Retained as NULL with a companion _flag column; excluded from rate denominators,54
+DQ-001,Medium,2025,issuer_internal_appeals_overturned,152 rows carry CMS suppression markers {'suppressed_small_cell': 152},Retained as NULL with a companion _flag column; excluded from rate denominators,152
+DQ-001,Medium,2025,issuer_external_appeals_filed,1304 rows carry CMS suppression markers {'suppressed_small_cell': 1304},Retained as NULL with a companion _flag column; excluded from rate denominators,1304
+DQ-001,Medium,2025,issuer_external_appeals_overturned,1287 rows carry CMS suppression markers {'suppressed_small_cell': 1287},Retained as NULL with a companion _flag column; excluded from rate denominators,1287
+DQ-001,Medium,2025,plan_claims_received_out,83 rows carry CMS suppression markers {'suppressed_small_cell': 83},Retained as NULL with a companion _flag column; excluded from rate denominators,83
+DQ-001,Medium,2025,plan_claims_received_in,13 rows carry CMS suppression markers {'suppressed_small_cell': 13},Retained as NULL with a companion _flag column; excluded from rate denominators,13
+DQ-001,Medium,2025,plan_claims_denied_out,"299 rows carry CMS suppression markers {'not_required': 161, 'suppressed_small_cell': 138}",Retained as NULL with a companion _flag column; excluded from rate denominators,299
+DQ-001,Medium,2025,plan_claims_denied_in,34 rows carry CMS suppression markers {'suppressed_small_cell': 34},Retained as NULL with a companion _flag column; excluded from rate denominators,34
+DQ-001,Medium,2025,plan_claims_resubmitted_out,443 rows carry CMS suppression markers {'suppressed_small_cell': 443},Retained as NULL with a companion _flag column; excluded from rate denominators,443
+DQ-001,Medium,2025,plan_claims_resubmitted_in,129 rows carry CMS suppression markers {'suppressed_small_cell': 129},Retained as NULL with a companion _flag column; excluded from rate denominators,129
+DQ-001,Medium,2025,den_referral_required,"350 rows carry CMS suppression markers {'suppressed_small_cell': 189, 'not_required': 161}",Retained as NULL with a companion _flag column; excluded from rate denominators,350
+DQ-001,Medium,2025,den_out_of_network,261 rows carry CMS suppression markers {'suppressed_small_cell': 261},Retained as NULL with a companion _flag column; excluded from rate denominators,261
+DQ-001,Medium,2025,den_service_excluded,159 rows carry CMS suppression markers {'suppressed_small_cell': 159},Retained as NULL with a companion _flag column; excluded from rate denominators,159
+DQ-001,Medium,2025,den_med_nec_other,401 rows carry CMS suppression markers {'suppressed_small_cell': 401},Retained as NULL with a companion _flag column; excluded from rate denominators,401
+DQ-001,Medium,2025,den_med_nec_behavioral,357 rows carry CMS suppression markers {'suppressed_small_cell': 357},Retained as NULL with a companion _flag column; excluded from rate denominators,357
+DQ-001,Medium,2025,den_benefit_limit,294 rows carry CMS suppression markers {'suppressed_small_cell': 294},Retained as NULL with a companion _flag column; excluded from rate denominators,294
+DQ-001,Medium,2025,den_member_not_covered,268 rows carry CMS suppression markers {'suppressed_small_cell': 268},Retained as NULL with a companion _flag column; excluded from rate denominators,268
+DQ-001,Medium,2025,den_investigational,546 rows carry CMS suppression markers {'suppressed_small_cell': 546},Retained as NULL with a companion _flag column; excluded from rate denominators,546
+DQ-001,Medium,2025,den_administrative,87 rows carry CMS suppression markers {'suppressed_small_cell': 87},Retained as NULL with a companion _flag column; excluded from rate denominators,87
+DQ-001,Medium,2025,den_other,137 rows carry CMS suppression markers {'suppressed_small_cell': 137},Retained as NULL with a companion _flag column; excluded from rate denominators,137
+DQ-001,Medium,2025,avg_monthly_enrollment,"1863 rows carry CMS suppression markers {'not_available': 1708, 'suppressed_small_cell': 155}",Retained as NULL with a companion _flag column; excluded from rate denominators,1863
+DQ-001,Medium,2025,avg_monthly_disenrollment,"2173 rows carry CMS suppression markers {'not_available': 1708, 'suppressed_small_cell': 465}",Retained as NULL with a companion _flag column; excluded from rate denominators,2173
+DQ-001,Medium,2026,issuer_claims_denied_in,8 rows carry CMS suppression markers {'suppressed_small_cell': 8},Retained as NULL with a companion _flag column; excluded from rate denominators,8
+DQ-001,Medium,2026,issuer_claims_resubmitted_out,25 rows carry CMS suppression markers {'suppressed_small_cell': 25},Retained as NULL with a companion _flag column; excluded from rate denominators,25
+DQ-001,Medium,2026,issuer_claims_resubmitted_in,5 rows carry CMS suppression markers {'suppressed_small_cell': 5},Retained as NULL with a companion _flag column; excluded from rate denominators,5
+DQ-001,Medium,2026,issuer_internal_appeals_filed,106 rows carry CMS suppression markers {'suppressed_small_cell': 106},Retained as NULL with a companion _flag column; excluded from rate denominators,106
+DQ-001,Medium,2026,issuer_internal_appeals_overturned,312 rows carry CMS suppression markers {'suppressed_small_cell': 312},Retained as NULL with a companion _flag column; excluded from rate denominators,312
+DQ-001,Medium,2026,issuer_external_appeals_filed,1073 rows carry CMS suppression markers {'suppressed_small_cell': 1073},Retained as NULL with a companion _flag column; excluded from rate denominators,1073
+DQ-001,Medium,2026,issuer_external_appeals_overturned,987 rows carry CMS suppression markers {'suppressed_small_cell': 987},Retained as NULL with a companion _flag column; excluded from rate denominators,987
+DQ-001,Medium,2026,plan_claims_received_out,62 rows carry CMS suppression markers {'suppressed_small_cell': 62},Retained as NULL with a companion _flag column; excluded from rate denominators,62
+DQ-001,Medium,2026,plan_claims_received_in,5 rows carry CMS suppression markers {'suppressed_small_cell': 5},Retained as NULL with a companion _flag column; excluded from rate denominators,5
+DQ-001,Medium,2026,plan_claims_denied_out,"238 rows carry CMS suppression markers {'suppressed_small_cell': 141, 'not_required': 97}",Retained as NULL with a companion _flag column; excluded from rate denominators,238
+DQ-001,Medium,2026,plan_claims_denied_in,18 rows carry CMS suppression markers {'suppressed_small_cell': 18},Retained as NULL with a companion _flag column; excluded from rate denominators,18
+DQ-001,Medium,2026,plan_claims_resubmitted_out,495 rows carry CMS suppression markers {'suppressed_small_cell': 495},Retained as NULL with a companion _flag column; excluded from rate denominators,495
+DQ-001,Medium,2026,plan_claims_resubmitted_in,113 rows carry CMS suppression markers {'suppressed_small_cell': 113},Retained as NULL with a companion _flag column; excluded from rate denominators,113
+DQ-001,Medium,2026,den_referral_required,"280 rows carry CMS suppression markers {'suppressed_small_cell': 183, 'not_required': 97}",Retained as NULL with a companion _flag column; excluded from rate denominators,280
+DQ-001,Medium,2026,den_out_of_network,374 rows carry CMS suppression markers {'suppressed_small_cell': 374},Retained as NULL with a companion _flag column; excluded from rate denominators,374
+DQ-001,Medium,2026,den_service_excluded,146 rows carry CMS suppression markers {'suppressed_small_cell': 146},Retained as NULL with a companion _flag column; excluded from rate denominators,146
+DQ-001,Medium,2026,den_med_nec_other,424 rows carry CMS suppression markers {'suppressed_small_cell': 424},Retained as NULL with a companion _flag column; excluded from rate denominators,424
+DQ-001,Medium,2026,den_med_nec_behavioral,624 rows carry CMS suppression markers {'suppressed_small_cell': 624},Retained as NULL with a companion _flag column; excluded from rate denominators,624
+DQ-001,Medium,2026,den_benefit_limit,306 rows carry CMS suppression markers {'suppressed_small_cell': 306},Retained as NULL with a companion _flag column; excluded from rate denominators,306
+DQ-001,Medium,2026,den_member_not_covered,218 rows carry CMS suppression markers {'suppressed_small_cell': 218},Retained as NULL with a companion _flag column; excluded from rate denominators,218
+DQ-001,Medium,2026,den_investigational,618 rows carry CMS suppression markers {'suppressed_small_cell': 618},Retained as NULL with a companion _flag column; excluded from rate denominators,618
+DQ-001,Medium,2026,den_administrative,78 rows carry CMS suppression markers {'suppressed_small_cell': 78},Retained as NULL with a companion _flag column; excluded from rate denominators,78
+DQ-001,Medium,2026,den_other,97 rows carry CMS suppression markers {'suppressed_small_cell': 97},Retained as NULL with a companion _flag column; excluded from rate denominators,97
+DQ-001,Medium,2026,avg_monthly_enrollment,"1858 rows carry CMS suppression markers {'not_available': 1253, 'suppressed_small_cell': 605}",Retained as NULL with a companion _flag column; excluded from rate denominators,1858
+DQ-001,Medium,2026,avg_monthly_disenrollment,"2700 rows carry CMS suppression markers {'suppressed_small_cell': 1428, 'not_available': 1272}",Retained as NULL with a companion _flag column; excluded from rate denominators,2700
+DQ-005,Medium,2022,den_out_of_network,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,5152
+DQ-005,Medium,2022,den_benefit_limit,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,5152
+DQ-005,Medium,2022,den_member_not_covered,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,5152
+DQ-005,Medium,2022,den_investigational,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,5152
+DQ-005,Medium,2022,den_administrative,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,5152
+DQ-005,Medium,2023,den_out_of_network,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,6764
+DQ-005,Medium,2023,den_benefit_limit,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,6764
+DQ-005,Medium,2023,den_member_not_covered,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,6764
+DQ-005,Medium,2023,den_investigational,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,6764
+DQ-005,Medium,2023,den_administrative,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,6764
+DQ-005,Medium,2024,den_med_nec_other,Denial reason category absent from this schema generation,Filled as NULL; excluded from reason-mix denominators for this year,5050

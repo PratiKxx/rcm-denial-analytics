@@ -1,0 +1,139 @@
+{
+  "data_vintage": {
+    "plan_years": "PY2022-PY2026 files",
+    "experience_years": "2020-2024",
+    "issuers": 277,
+    "plan_years_observed": 25666,
+    "states": 33
+  },
+  "national_all_years": {
+    "claims_received": 1875320210.0,
+    "claims_denied": 358778398.0,
+    "denial_rate": 0.19131580627502542,
+    "appeal_rate": 0.0025110095953993308,
+    "internal_overturn_rate": 0.3973721717046141,
+    "denials_never_appealed": 357877502.0,
+    "share_never_appealed": 0.9974889904046007
+  },
+  "resubmission_pooled": {
+    "reporting_years": [
+      2022,
+      2023,
+      2024
+    ],
+    "claims_resubmitted": 89838810.0,
+    "claims_denied_in_reporting_years": 268166835.0,
+    "resubmission_rate": 0.33501088976942284,
+    "note": "Denominator is denials in the three reporting years only. Dividing the same volume by the five-year denial pool gives 25.0%, which is not a resubmission rate."
+  },
+  "latest_year": {
+    "experience_year": 2024,
+    "denial_rate": 0.20372247296638726,
+    "resubmission_rate": 0.34749436792901234,
+    "appeal_rate": 0.0026048284990090854,
+    "internal_overturn_rate": 0.32623630812748794
+  },
+  "reason_mix": {
+    "unclassified_other_share": 0.6044762311355788,
+    "basis_plan_years": 4640,
+    "top_classified": [
+      {
+        "denial_reason": "den_administrative",
+        "share_of_denials": 0.15069188348557483
+      },
+      {
+        "denial_reason": "den_service_excluded",
+        "share_of_denials": 0.10179184504021502
+      },
+      {
+        "denial_reason": "den_referral_required",
+        "share_of_denials": 0.053084587160627694
+      }
+    ]
+  },
+  "rate_basis": {
+    "note": "The provider dollar model is driven by the most recent experience year, NOT the pooled five-year rates quoted as the industry baseline. Do not mix the two.",
+    "basis_year": 2024,
+    "model_rates": {
+      "denial_rate": 0.20372247296638726,
+      "appeal_rate": 0.0026048284990090854,
+      "internal_overturn_rate": 0.32623630812748794,
+      "resubmission_rate": 0.34749436792901234
+    },
+    "pooled_rates_for_contrast": {
+      "denial_rate": 0.19131580627502542,
+      "appeal_rate": 0.0025110095953993308,
+      "internal_overturn_rate": 0.3973721717046141
+    }
+  },
+  "provider_opportunity": {
+    "profile": "Reference Regional Health System",
+    "annual_claims": 184000,
+    "rate_basis_year": 2024,
+    "annual_denials": 37484.935025815255,
+    "write_off_share": 0.8080283080062212,
+    "net_appeal_recovery_blanket": 21582.55106201207,
+    "net_appeal_recovery_selective": 287650.65859428677,
+    "categories_appeal_positive": 5,
+    "categories_total": 10,
+    "prevention_value": 5063865.0226034215,
+    "total_opportunity": 5351515.6811977085,
+    "prevention_to_appeal_ratio": 17.604218420183372,
+    "wave1_opportunity": 4004928.448001976,
+    "wave1_root_causes": [
+      "Unclassified",
+      "Mid-Cycle: Coding & Claim Submission"
+    ]
+  },
+  "sensitivity": {
+    "range_low": 3166355.4928395553,
+    "range_high": 9024392.586038262,
+    "most_sensitive_assumption": "denial_value_at_risk_share"
+  },
+  "calibration": {
+    "gross_claim_value": 245882880.0,
+    "denial_write_off": 10118911.911717271,
+    "denial_loss_pct_of_revenue": 0.04115338128346826,
+    "benchmark_low": 0.03,
+    "benchmark_high": 0.05,
+    "status": "PASS"
+  },
+  "assumptions": {
+    "avg_allowed_amount_per_claim": {
+      "value": 1336.32,
+      "low": 1002.24,
+      "high": 1737.21,
+      "source": "Derived in src/derive_claim_value.py from CMS DY2024 Inpatient (DRG), Outpatient (C-APC), and Physician payment files, weighted by a four-bucket claim mix and adjusted to commercial rates. Loaded live from outputs/claim_value.json."
+    },
+    "appeal_cost_per_hour": {
+      "value": 62.0,
+      "low": 45.0,
+      "high": 90.0,
+      "source": "Blended fully-loaded hourly rate for a denials analyst plus prorated clinical reviewer time."
+    },
+    "collection_rate_on_overturn": {
+      "value": 0.94,
+      "low": 0.85,
+      "high": 0.99,
+      "source": "Share of overturned claim value actually collected after secondary adjustments and patient responsibility."
+    },
+    "resubmission_success_rate": {
+      "value": 0.55,
+      "low": 0.4,
+      "high": 0.7,
+      "source": "Share of resubmitted (reworked) claims that ultimately pay. TC-PUF reports resubmission volume but not resubmission outcome, so this is the one funnel stage that is assumed rather than observed."
+    },
+    "rework_touch_cost": {
+      "value": 25.0,
+      "low": 12.0,
+      "high": 45.0,
+      "source": "Fully-loaded cost of one manual touch to rework and resubmit a denied claim, excluding formal appeal handling."
+    },
+    "denial_value_at_risk_share": {
+      "value": 0.25,
+      "low": 0.15,
+      "high": 0.4,
+      "source": "Share of a denied claim's allowed amount genuinely at risk. A claim-level denial event in TC-PUF is not a total loss: many are line-level, partial, duplicate, coordination-of-benefits routing, or zero-dollar administrative denials. Calibrated so modelled denial loss falls inside the published 3-5 percent of net patient revenue band. See CALIBRATION in docs/EXEC_MEMO.md."
+    }
+  }
+}

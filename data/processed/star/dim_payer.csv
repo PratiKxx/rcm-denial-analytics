@@ -1,0 +1,284 @@
+payer_key,issuer_id,issuer_name,state,valid_from_year,valid_to_year,is_current
+1,10091,PacificSource Health Plans,OR,2020,9999,True
+2,10207,"CareFirst BlueChoice, Inc.",VA,2020,9999,True
+3,11269,Blue Cross Blue Shield of Wyoming,WY,2020,9999,True
+4,11512,Blue Cross and Blue Shield of NC,NC,2020,9999,True
+5,11574,"Oscar Health Plan, Inc.",IL,2020,9999,True
+6,11718,"Community Health Choice Texas, Inc.",TX,2023,9999,True
+7,12379,Bright Health Insurance Company of Florida,FL,2020,9999,True
+8,13219,"Boston Medical Center Health Plan, Inc.",NH,2023,9999,True
+9,13262,"HMO Partners, Inc.",AR,2020,9999,True
+10,13484,Celtic Insurance Company,NE,2024,9999,True
+11,13591,CareSource North Carolina Co.,NC,2021,9999,True
+12,13877,"Oscar Health Plan, Inc.",AZ,2020,9999,True
+13,13887,Community Care Network Inc,FL,2024,9999,True
+14,14002,BlueCross BlueShield of Tennessee,TN,2020,9999,True
+15,14624,"Vantage Health Plan of Mississippi, Inc.",MS,2020,2021,False
+16,14624,"Primewell Health Services of Mississippi, Inc.",MS,2022,9999,True
+17,14630,Children's Community Health Plan,WI,2020,2021,False
+18,14630,Chorus Community Health Plans,WI,2022,9999,True
+19,15105,"Cigna HealthCare of Georgia, Inc.",GA,2020,9999,True
+20,15560,Blue Cross Blue Shield of Michigan Mutual Insurance Company,MI,2020,9999,True
+21,15724,Oscar Insurance Company,AR,2020,9999,True
+22,16842,Blue Cross and Blue Shield of Florida,FL,2020,9999,True
+23,16985,Bright Health Company of South Carolina,SC,2020,9999,True
+24,17091,Oscar Insurance Company,AL,2024,9999,True
+25,17414,"AmeriHealth Caritas North Carolina, Inc.",NC,2020,9999,True
+26,17575,Anthem Ins Companies Inc(Anthem BCBS),IN,2020,9999,True
+27,17933,"Moda Health Plan, Inc.",TX,2020,9999,True
+28,18167,Molina Healthcare of Utah,UT,2020,9999,True
+29,18350,Hawaii Medical Service Association,HI,2020,9999,True
+30,18558,"Blue Cross and Blue Shield of Kansas, Inc.",KS,2020,9999,True
+31,18628,Aetna Health Inc. (a FL corp.),FL,2021,9999,True
+32,19636,"HMO Louisiana, Inc.",LA,2020,9999,True
+33,19898,"AvMed, Inc.",FL,2020,9999,True
+34,20069,Oscar Insurance Company,TX,2020,9999,True
+35,20129,"Health Alliance Medical Plans, Inc.",IL,2020,9999,True
+36,20173,HealthPartners Insurance Company,WI,2020,9999,True
+37,20305,Medica Insurance Company,NE,2020,9999,True
+38,20507,Optima Health Plan,VA,2020,9999,True
+39,20635,"Oscar Health Plan, Inc.",MS,2024,9999,True
+40,21333,Medica Insurance Company,OK,2020,9999,True
+41,21525,Oscar Health Maintenance Organization of Florida,FL,2024,9999,True
+42,21663,Celtic Insurance Company,FL,2020,9999,True
+43,22013,Regence BlueCross BlueShield of Utah,UT,2020,9999,True
+44,23435,Banner Health and Aetna Health Plan Inc.,AZ,2020,9999,True
+45,23552,Oscar Insurance Company,TN,2020,9999,True
+46,23603,PacificSource Health Plans,MT,2020,9999,True
+47,24251,"Optimum Choice, Inc.",VA,2020,9999,True
+48,25896,"Wellmark Health Plan of Iowa, Inc.",IA,2020,9999,True
+49,25922,Oscar Insurance Company,VA,2020,9999,True
+50,25928,Bright Health Insurance Company,VA,2020,9999,True
+51,26065,Blue Cross and Blue Shield of South Carolina,SC,2020,9999,True
+52,26289,"Nebraska Total Care, Inc.",NE,2020,9999,True
+53,26539,"SHA, LLC DBA FirstCare Health Plans",TX,2020,9999,True
+54,27248,"Community Health Choice, Inc.",TX,2020,9999,True
+55,27833,Celtic Insurance Company,IL,2020,9999,True
+56,28162,AultCare Insurance Company,OH,2020,9999,True
+57,29276,Community Insurance Company(Anthem BCBS),OH,2020,9999,True
+58,29341,Oscar Buckeye State Insurance Corp.,OH,2020,9999,True
+59,29418,Celtic Insurance Company,TX,2020,9999,True
+60,29678,Blue Cross and Blue Shield of Nebraska,NE,2021,9999,True
+61,29698,Priority Health,MI,2020,9999,True
+62,29854,"Alliant Health Plans, Inc.",TN,2023,9999,True
+63,30252,"Health Options, Inc.",FL,2020,9999,True
+64,30751,Blue Cross and Blue Shield of Montana,MT,2020,9999,True
+65,31195,Sanford Health Plan,SD,2020,9999,True
+66,31274,Highmark Blue Cross Blue Shield West Virginia,WV,2020,9999,True
+67,31663,US Health and Life Insurance Company,TN,2021,9999,True
+68,31981,Antidote Health Plan of Ohio,OH,2023,9999,True
+69,32225,Montana Health Cooperative,MT,2020,9999,True
+70,32311,Medica Community Health Plan,AZ,2020,9999,True
+71,32355,"Molina Healthcare of Illinois, Inc.",IL,2020,9999,True
+72,32542,US Health and Life Insurance Company,KS,2020,9999,True
+73,32753,Healthy Alliance Life Co(Anthem BCBS),MO,2020,9999,True
+74,33602,Blue Cross Blue Shield of Texas,TX,2020,9999,True
+75,33764,"UnitedHealthcare of South Carolina, Inc.",SC,2022,9999,True
+76,33863,InStil Health Insurance Company,SC,2023,9999,True
+77,33931,"UnitedHealthcare of Ohio, Inc.",OH,2021,9999,True
+78,34368,Celtic Insurance Company,KS,2020,9999,True
+79,34541,BridgeSpan Health Company,UT,2020,9999,True
+80,34762,Blue Cross and Blue Shield of Kansas City,MO,2020,9999,True
+81,34826,"Imperial Insurance Companies, Inc.",TX,2021,9999,True
+82,35065,Coordinated Care Corporation Indiana,IN,2023,9999,True
+83,35755,US HEALTH AND LIFE INSURANCE COMPANY,IN,2020,9999,True
+84,36096,Blue Cross Blue Shield of Illinois,IL,2020,9999,True
+85,36194,"Health First Commercial Plans, Inc.",FL,2020,9999,True
+86,37160,Blue Cross Blue Shield of North Dakota,ND,2020,9999,True
+87,37204,"Piedmont Community HealthCare HMO, Inc.",VA,2020,9999,True
+88,37758,Harbor Health Insurance Company,TX,2024,9999,True
+89,37833,Quartz Health Benefit Plans Corporation,WI,2020,9999,True
+90,37900,Bright Health Company of North Carolina,NC,2020,9999,True
+91,37903,"QualChoice Life & Health Insurance Company, Inc.",AR,2020,9999,True
+92,38146,Bright Health Company of Georgia,GA,2020,9999,True
+93,38166,"Security Health Plan of Wisconsin, Inc.",WI,2020,9999,True
+94,38234,Aetna Life Insurance Company,VA,2020,9999,True
+95,38246,"AmeriHealth Caritas Louisiana, Inc.",LA,2024,9999,True
+96,38344,Premera Blue Cross Blue Shield of Alaska,AK,2020,9999,True
+97,38345,Dean Health Plan,WI,2020,9999,True
+98,38576,Montana Health Cooperative,WY,2020,9999,True
+99,38927,Aetna Health of Utah Inc.,UT,2022,9999,True
+100,39424,"Moda Health Plan, Inc.",OR,2020,9999,True
+101,39520,Medica Insurance Company,KS,2020,9999,True
+102,39889,Bright Health Insurance Company,UT,2020,9999,True
+103,40047,"Molina Healthcare of Michigan, Inc.",MI,2020,9999,True
+104,40220,"UnitedHealthcare of Texas, Inc.",TX,2020,9999,True
+105,40308,Group Hospitalization and Medical Services Inc.,VA,2020,9999,True
+106,40356,HAP CareSource,MI,2023,9999,True
+107,40463,Bright Health Insurance Company,OK,2020,9999,True
+108,40572,Oscar Insurance Company of Florida,FL,2020,9999,True
+109,40702,"UnitedHealthcare of Arizona, Inc.",AZ,2020,9999,True
+110,40788,Scott and White Health Plan,TX,2020,9999,True
+111,41047,Buckeye Community Health Plan,OH,2020,9999,True
+112,41921,Cigna Health and Life Insurance Company,VA,2020,9999,True
+113,42261,University of Utah Health Insurance Plans,UT,2020,9999,True
+114,42326,"MOLINA HEALTHCARE OF SOUTH CAROLINA, INC",SC,2020,9999,True
+115,42529,"UnitedHealthcare of Illinois, Inc.",IL,2020,9999,True
+116,43490,Oscar Insurance Company,KS,2020,9999,True
+117,43802,"UnitedHealthcare of Georgia, Inc.",GA,2020,9999,True
+118,44007,Celtic Insurance Company,NC,2020,9999,True
+119,44228,Simply Healthcare Plans Inc dba Wellpoint Florida Inc,FL,2023,9999,True
+120,44522,Bright Health Insurance Company of Illinois,IL,2020,9999,True
+121,45334,"AMGP Georgia Managed Care Company, Inc. dba Anthem Blue Cross and Blue Shield",GA,2022,9999,True
+122,45480,"UnitedHealthcare of Oklahoma, Inc.",OK,2020,9999,True
+123,45786,"Molina Healthcare of Texas, Inc.",TX,2020,9999,True
+124,45819,Oscar Insurance Company,IA,2020,9999,True
+125,45845,Oscar Insurance Corporation of Ohio,OH,2020,9999,True
+126,46400,Sidecar Health Insurance Company,OH,2021,9999,True
+127,46944,Blue Cross and Blue Shield of Alabama,AL,2020,9999,True
+128,47501,Wellpoint Insurance Company,TX,2023,9999,True
+129,47840,SSM Health Insurance Company,MO,2020,2021,False
+130,47840,Medica Central Insurance Company,MO,2022,9999,True
+131,48121,Cigna Health and Life Insurance Company,FL,2020,9999,True
+132,48161,Aetna Life Insurance Company,MO,2020,9999,True
+133,48286,"Iowa Total Care, Inc.",IA,2023,9999,True
+134,48772,"USAble HMO, Inc.",AR,2022,9999,True
+135,49004,Centene Venture Company Florida,FL,2023,9999,True
+136,49046,Anthem Blue Cross and Blue Shield,GA,2020,9999,True
+137,49714,UnitedHealthcare Insurance Company,WY,2023,9999,True
+138,50305,Wellmark of South Dakota,SD,2021,9999,True
+139,50328,CareSource West Virginia Co.,WV,2020,9999,True
+140,52664,"Summa Insurance Company, Inc.",OH,2020,9999,True
+141,52697,"Molina Healthcare of Wisconsin, Inc.",WI,2020,9999,True
+142,53461,Medica Insurance Company,MO,2020,9999,True
+143,53882,"Cigna HealthCare of Illinois, Inc.",IL,2020,9999,True
+144,53901,"Blue Cross and Blue Shield of Arizona, Inc.",AZ,2020,9999,True
+145,53932,Celtic Insurance Company,AL,2021,9999,True
+146,54172,"Molina Healthcare of Florida, Inc",FL,2020,9999,True
+147,54192,"CareSource Indiana, Inc.",IN,2020,9999,True
+148,54322,"MercyCare HMO, Inc.",IL,2020,9999,True
+149,54332,"UnitedHealthcare of North Carolina, Inc",NC,2020,9999,True
+150,54837,Friday Health Insurance Company Inc,TX,2020,9999,True
+151,56503,"Florida Health Care Plan, Inc.",FL,2020,9999,True
+152,56610,"UnitedHealthcare Plan of the River Valley, Inc.",IA,2023,9999,True
+153,56707,Providence Health Plan,OR,2020,9999,True
+154,56766,Cigna Health and Life Insurance Company,MS,2020,9999,True
+155,57125,US HEALTH AND LIFE INSURANCE COMPANY,TX,2021,9999,True
+156,57424,Oscar Insurance Company,NE,2020,9999,True
+157,57845,Medica Community Health Plan,WI,2020,9999,True
+158,58081,Oscar Health Plan of Georgia,GA,2020,9999,True
+159,58326,"MercyCare HMO, Inc.",WI,2020,9999,True
+160,58594,"Meridian Health Plan of Michigan, Inc.",MI,2020,9999,True
+161,58840,Aetna Health Inc.  (a TX corp.),TX,2020,9999,True
+162,58944,"Taro Health Plan of Oklahoma, Inc.",OK,2022,9999,True
+163,58996,US HEALTH AND LIFE INSURANCE COMPANY,MI,2020,9999,True
+164,59025,Harvard Pilgrim Health Care of NE,NH,2020,9999,True
+165,60224,CareSource Georgia Co.,GA,2020,9999,True
+166,60536,"Avera Health Plans, Inc.",SD,2020,9999,True
+167,60612,"Kaiser Foundation Health Plan, Inc.",HI,2020,9999,True
+168,60829,Physicians Health Plan,MI,2020,2021,False
+169,60829,University of Michigan Health Plan,MI,2022,9999,True
+170,61604,Louisiana Healthcare Connections,LA,2020,9999,True
+171,61671,Aetna Health Inc. (a PA corp.),NC,2020,9999,True
+172,62141,Celtic Insurance Company,AR,2020,9999,True
+173,62505,Celtic Insurance Company,OK,2020,9999,True
+174,63251,Community First Insurance Plans,TX,2020,9999,True
+175,63474,BridgeSpan Health Company,OR,2020,9999,True
+176,63876,CareSource Iowa Co.,IA,2021,9999,True
+177,64004,Celtic Insurance Company,DE,2022,9999,True
+178,64353,"Molina Healthcare of Ohio, Inc.",OH,2020,9999,True
+179,65280,SSM Health Plan,IL,2020,2021,False
+180,65280,Medica Central Health Plan,IL,2022,9999,True
+181,66252,CHRISTUS Health Plan,TX,2020,9999,True
+182,66966,Capital Health Plan,FL,2020,9999,True
+183,67190,Aetna Health Inc. (a PA corp.),DE,2021,9999,True
+184,67243,"Vantage Health Plan, Inc.",LA,2020,9999,True
+185,67926,"AmeriHealth Caritas Florida, Inc.",FL,2021,9999,True
+186,68398,"UnitedHealthcare of Florida, Inc.",FL,2020,9999,True
+187,68445,"Antidote Health Plan of Arizona, Inc.",AZ,2023,9999,True
+188,68781,SelectHealth,UT,2020,2021,False
+189,68781,"SelectHealth, Inc.",UT,2022,9999,True
+190,69443,UnitedHealthcare Insurance Company,TN,2020,9999,True
+191,69461,UnitedHealthcare Insurance Company,AL,2020,9999,True
+192,69512,Oscar Insurance Company,MO,2020,9999,True
+193,69803,"Oscar Health Plan of North Carolina, Inc",NC,2020,9999,True
+194,69842,UnitedHealthcare Insurance Company,LA,2020,9999,True
+195,70111,Celtic Insurance Company,TN,2020,9999,True
+196,70525,"QCA Health Plan, Inc.",AR,2020,9999,True
+197,70754,"UnitedHealthcare Benefits of Texas, Inc.",TX,2024,9999,True
+198,70893,Ambetter of Peach State Inc.,GA,2020,9999,True
+199,71287,Kaiser Foundation Healthplan of the NW,OR,2020,9999,True
+200,71667,"UnitedHealthcare Community Plan, Inc.",MI,2020,9999,True
+201,71837,"Sendero Health Plans, Inc.",TX,2020,9999,True
+202,72547,Aetna Life Insurance Company,IL,2022,9999,True
+203,72760,"AmeriHealth Caritas VIP Next, Inc.",DE,2021,9999,True
+204,72850,UnitedHealthcare Insurance Company,IN,2023,9999,True
+205,73033,"Cigna HealthCare of South Carolina, Inc.",SC,2021,9999,True
+206,73102,UnitedHealthcare Insurance Company,NE,2023,9999,True
+207,73107,Select Health of South Carolina,SC,2021,9999,True
+208,73301,Bright Health Insurance Company,AL,2020,9999,True
+209,73751,Medica Health Plans,ND,2020,9999,True
+210,73836,"Moda Health Plan, Inc.",AK,2022,9999,True
+211,73943,"Cigna HealthCare of North Carolina, Inc.",NC,2020,9999,True
+212,74313,Paramount Insurance Company,OH,2020,9999,True
+213,74483,Cigna Health and Life Insurance Company,MO,2020,9999,True
+214,74917,McLaren Health Plan Community,MI,2020,9999,True
+215,74980,"Avera Health Plans, Inc.",IA,2024,9999,True
+216,75293,USAble Mutual Insurance Company,AR,2020,9999,True
+217,75841,Celtic Insurance Company,NH,2020,9999,True
+218,76168,Highmark BCBSD Inc.,DE,2020,9999,True
+219,76179,Celtic Insurance Company,IN,2020,9999,True
+220,76589,"Cigna HealthCare of Texas, Inc.",TX,2021,9999,True
+221,76763,Cigna Health and Life Insurance Company,KS,2020,9999,True
+222,77264,Ambetter of North Carolina Inc.,NC,2020,9999,True
+223,77320,Friday Health Plans of North Carolina Inc,NC,2020,9999,True
+224,77552,"CareSource Ohio, Inc.",OH,2020,9999,True
+225,77739,Oscar Insurance Company,MI,2020,9999,True
+226,77963,Moda Assurance Company,AK,2020,9999,True
+227,77969,Regence BlueCross BlueShield of Oregon,OR,2020,9999,True
+228,79222,"Absolute Total Care, Inc",SC,2020,9999,True
+229,79475,Compcare Health Serv Ins Co(Anthem BCBS),WI,2020,9999,True
+230,79850,"Cigna HealthCare of Florida, Inc.",FL,2024,9999,True
+231,79975,"Molina Healthcare of Mississippi, Inc",MS,2020,9999,True
+232,80180,"UnitedHealthcare of Wisconsin, Inc.",WI,2022,9999,True
+233,81413,Network Health Plan,WI,2020,9999,True
+234,81808,Cigna Health and Life Insurance Company,UT,2020,9999,True
+235,82824,Aetna Health Inc. (a GA corp.),GA,2020,9999,True
+236,83653,Bright Health Insurance Company,NE,2020,9999,True
+237,83761,Alliant Health Plans,GA,2020,9999,True
+238,84600,Aetna Life Insurance Company,KS,2022,9999,True
+239,84670,"WPS Health Plan, Inc.",WI,2020,9999,True
+240,84867,Aetna Health Inc. (a PA corp.),OH,2022,9999,True
+241,85533,"Imperial Insurance Companies, Inc.",AZ,2021,9999,True
+242,85773,Quartz Health Benefit Plans Corporation,IL,2020,9999,True
+243,86382,Sunshine State Health Plan,FL,2020,9999,True
+244,86443,"Innovation Health Plan, Inc.",VA,2020,9999,True
+245,86584,"Aspirus Health Plan, Inc.",WI,2020,9999,True
+246,87226,Superior Health Plan,TX,2020,9999,True
+247,87247,Bright Health Company of Arizona,AZ,2020,9999,True
+248,87416,Common Ground Healthcare Cooperative,WI,2020,9999,True
+249,87571,Blue Cross Blue Shield of Oklahoma,OK,2020,9999,True
+250,88380,"HealthKeepers, Inc.",VA,2020,9999,True
+251,89364,Sanford Health Plan,ND,2020,9999,True
+252,89942,Kaiser Foundation Health Plan of Georgia,GA,2020,9999,True
+253,90617,Friday Health Plans of Georgia Inc,GA,2020,9999,True
+254,90714,Ambetter of Magnolia Inc.,MS,2020,9999,True
+255,90787,"Ambetter Health of Louisiana, Inc.",LA,2022,9999,True
+256,91450,"Health Net of Arizona, Inc.",AZ,2020,9999,True
+257,91538,Friday Health Plans of Oklahoma Inc,OK,2020,9999,True
+258,91908,Oscar Insurance Company,OK,2020,9999,True
+259,92120,"Coventry Health Plan of Florida, Inc.",FL,2020,9999,True
+260,93078,Medica Insurance Company,IA,2020,9999,True
+261,93187,Aetna Health Inc. (a PA corp.),VA,2021,9999,True
+262,94248,Blue Cross and Blue Shield of Kansas City,KS,2020,9999,True
+263,94419,Cigna Health and Life Insurance Company,IN,2021,9999,True
+264,94529,Group Health Cooperative of South Central Wisconsin,WI,2020,9999,True
+265,94968,UnitedHealthcare Insurance Company,KS,2021,9999,True
+266,95185,"Kaiser Foundation Health Plan of the Mid-Atlantic States, Inc.",VA,2020,9999,True
+267,95426,UnitedHealthcare Insurance Company,MO,2021,9999,True
+268,96384,Cox Health Systems Insurance Company,MO,2020,9999,True
+269,96751,Matthew Thornton Hlth Plan(Anthem BCBS),NH,2020,9999,True
+270,96992,Aetna Health Inc. (a PA corp.),IN,2022,9999,True
+271,97176,Louisiana Health Service & Indemnity Company,LA,2020,9999,True
+272,97560,"UnitedHealthcare of Mississippi, Inc.",MS,2021,9999,True
+273,97667,"Cigna HealthCare of Arizona, Inc",AZ,2020,9999,True
+274,97906,Bright Health Insurance Company of Tennessee,TN,2020,9999,True
+275,98113,"Imperial Health Plan of the Southwest, Inc.",UT,2022,9999,True
+276,98185,Blue Care Network of Michigan,MI,2020,9999,True
+277,98312,Bright HealthCare Insurance Company of Texas,TX,2020,9999,True
+278,98780,CHRISTUS Health Plan Louisiana,LA,2020,9999,True
+279,98905,CommunityCare HMO Inc.,OK,2020,9999,True
+280,99129,Aetna Health Inc. (a PA corp.),IL,2021,9999,True
+281,99248,Cigna Health and Life Insurance Company,TN,2020,9999,True
+282,99723,Celtic Insurance Company,MO,2020,9999,True
+283,99969,Medical Health Insuring Corp. of Ohio,OH,2020,9999,True

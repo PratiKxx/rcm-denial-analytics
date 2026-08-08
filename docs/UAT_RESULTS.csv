@@ -1,0 +1,24 @@
+test_case_id,brd_ids,title,expected,actual,status
+TC-001,BRD-001,All five plan years ingested,reconciliation.csv lists plan years 2022 through 2026 with non-zero source rows,"5 plan years, 25,666 source rows",PASS
+TC-002,BRD-002,Schema generations harmonized without silent column loss,Every source column is either mapped or explicitly listed as unmapped,"3 generations harmonized; 25 source columns explicitly listed as unmapped (disclosed, not dropped silently)",PASS
+TC-003,BRD-003,Suppression markers are not coerced to zero,Suppressed cells are NULL with a companion flag; no suppressed cell reads 0,"32 flag columns; 17,347 rows carry >=1 suppression marker; 0 coerced to zero",PASS
+TC-004,BRD-004,Issuer measures deduplicated to issuer grain,Issuer panel has exactly one row per issuer per plan year,"1,043 issuer-years, 0 duplicates; naive plan-grain sum would overstate volume 84.1x",PASS
+TC-005,BRD-005,Rates suppressed below minimum denominator,No denial rate computed on fewer than 100 claims; no overturn rate on fewer than 10 appeals,denominator floors enforced on denial and overturn rates,PASS
+TC-006,BRD-006,No rate exceeds 100 percent,"All computed rates are within [0, 1] or NULL","7 rate fields validated within [0, 1]",PASS
+TC-007,BRD-007,Data quality log is complete,"Every DQ finding carries id, severity, finding, treatment, and rows affected","112 findings across 7 IDs; 2 Critical, 3 High",PASS
+TC-010,"BRD-010, BRD-011, BRD-012",Every denial reason mapped to root cause and owner,"All 10 source categories have a root cause, an owner, and CARC examples",10/10 mapped across 6 accountable owners,PASS
+TC-013,BRD-013,Reason mix uses only reconciling plan-years,Reason mix denominator excludes plan-years whose categories do not sum to reported denials,"mix computed on 4,640 of 25,666 plan-years (18%); shares sum to 1.0",PASS
+TC-016,BRD-016,Claim value derived from published payment data,Derivation reads CMS files and logs every step,"$1,336.32/claim from 1,506,136 distinct rows across 3 CMS files, allocated over 4 buckets",PASS
+TC-018,"BRD-018, BRD-019",Recovery is net of cost and appeal is selective,Net recovery subtracts appeal cost; only ROI > 1.0 categories are recommended,"5/10 categories appeal-positive; selective $287,651 vs blanket $21,583",PASS
+TC-022,BRD-022,Sensitivity covers every assumption,Each assumption appears at its declared low and high bound,6 assumptions x 2 bounds tested,PASS
+TC-024,BRD-024,Calibration gate against external benchmark,Modelled denial loss falls inside the published 3-5 percent of revenue band,modelled loss 4.12% within 3%-5%,PASS
+TC-025,"BRD-025, BRD-026",Payer benchmark with peer percentiles,"Each payer carries percentile rank on denial, appeal, and overturn rate",152 payers benchmarked on 3 percentile measures,PASS
+TC-028,BRD-028,Prioritized action list with owner and wave,"Every root cause has a rank, a wave, and an accountable owner",9 root causes ranked across 3 waves,PASS
+TC-029,BRD-029,Star schema with referential integrity,All fact foreign keys resolve; payer dimension is Type 2,"7 tables, referential integrity PASS, 6 SCD2 name changes tracked",PASS
+TC-021,BRD-021,Unclassified denial share disclosed,The share of denials reported as Other is computed and available for display,unclassified share 60.4% disclosed,PASS
+TC-017,BRD-017,Observed inputs separated from assumed inputs,Every assumption carries a stated source; observed rates are not in the assumption set,6 assumptions declared with bounds and sources; 0 observed rates among them,PASS
+TC-014,"BRD-014, BRD-015",Preventability and effort are explicit adjustable parameters,"Every root cause declares preventability, appealability, and effort within valid ranges","10 categories; preventability 25%-90%, effort 0.5-4.0h",PASS
+TC-020,BRD-020,Prevention value reported separately from recovery,Prevention and net recovery are distinct columns and are not equal,"prevention $5,063,865 vs recovery $287,651 (18x)",PASS
+TC-027,BRD-027,State-level denial reporting,State summary present with denial rate and issuer count per state,30 states; denial rate 7.9%-32.0%,PASS
+TC-030,BRD-030,Findings rescale to any provider claim volume,Doubling claim volume doubles the opportunity; rates are volume-invariant,"2x volume -> 2.000x opportunity (linear, as required)",PASS
+TC-031,BRD-031,Provenance documented with source and scope caveats,Every source file is named with row counts and scope limitations disclosed,3 buckets scope-noted; DQ-010 logged; 5 plan years reconciled,PASS

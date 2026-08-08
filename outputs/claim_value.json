@@ -1,0 +1,39 @@
+{
+  "blended_commercial_allowed_per_claim": 1336.32,
+  "low": 1002.24,
+  "high": 1737.21,
+  "medicare_unit_values": {
+    "inpatient": 18359.99,
+    "outpatient_procedural": 5122.98,
+    "professional": 43.34,
+    "outpatient_ancillary": 82.34
+  },
+  "units_per_claim": {
+    "inpatient": 1.0,
+    "outpatient_procedural": 1.4,
+    "outpatient_ancillary": 3.0,
+    "professional": 2.3
+  },
+  "claim_mix": {
+    "inpatient": 0.02,
+    "outpatient_procedural": 0.015,
+    "outpatient_ancillary": 0.3,
+    "professional": 0.665
+  },
+  "commercial_to_medicare": {
+    "inpatient": 2.1,
+    "outpatient_procedural": 2.6,
+    "outpatient_ancillary": 2.6,
+    "professional": 1.4
+  },
+  "observed_source_rows": {
+    "inpatient": 145879,
+    "outpatient_procedural": 63518,
+    "professional": 1296739,
+    "outpatient_ancillary": 1296739
+  },
+  "distinct_source_rows": 1506136,
+  "distinct_source_files": 3,
+  "facility_uplift_ancillary": 1.9,
+  "note": "Step 1 observed from CMS DY2024 payment files. Units per claim, claim mix, commercial multiplier, and the ancillary facility uplift are assumptions with bounds. See DQ-010 for the C-APC scope correction."
+}

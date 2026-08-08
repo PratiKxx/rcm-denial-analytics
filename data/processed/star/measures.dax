@@ -1,0 +1,66 @@
+// Power BI measures for the RCM Denial Analytics model.
+// Paste into a new table named "_Measures" after loading the star schema CSVs.
+//
+// Relationships to create (all single-direction, many-to-one from fact to dim):
+//   fact_claims_summary[date_key]  -> dim_date[date_key]
+//   fact_claims_summary[payer_key] -> dim_payer[payer_key]
+//   fact_claims_summary[geo_key]   -> dim_geography[geo_key]
+//   fact_denials[date_key]         -> dim_date[date_key]
+//   fact_denials[plan_key]         -> dim_plan[plan_key]
+//   fact_denials[reason_key]       -> dim_denial_reason[reason_key]
+//   fact_denials[geo_key]          -> dim_geography[geo_key]
+
+Claims Received = SUM(fact_claims_summary[claims_received])
+Claims Denied = SUM(fact_claims_summary[claims_denied])
+Claims Resubmitted = SUM(fact_claims_summary[claims_resubmitted])
+Appeals Filed = SUM(fact_claims_summary[internal_appeals_filed])
+Appeals Overturned = SUM(fact_claims_summary[internal_appeals_overturned])
+
+Denial Rate = DIVIDE([Claims Denied], [Claims Received])
+Resubmission Rate = DIVIDE([Claims Resubmitted], [Claims Denied])
+Appeal Rate = DIVIDE([Appeals Filed], [Claims Denied])
+Overturn Rate = DIVIDE([Appeals Overturned], [Appeals Filed])
+
+Denials Never Appealed = [Claims Denied] - [Appeals Filed]
+Share Never Appealed = DIVIDE([Denials Never Appealed], [Claims Denied])
+
+// Peer benchmark: denial rate of the median payer in the current filter context.
+Median Payer Denial Rate =
+MEDIANX(
+    VALUES(dim_payer[payer_key]),
+    CALCULATE(DIVIDE([Claims Denied], [Claims Received]))
+)
+
+Excess Denial Rate vs Peer = [Denial Rate] - [Median Payer Denial Rate]
+
+// Denials attributable to denying above the peer median.
+Excess Denials = [Excess Denial Rate vs Peer] * [Claims Received]
+
+Denials by Reason = SUM(fact_denials[denials])
+
+Reason Share =
+DIVIDE(
+    [Denials by Reason],
+    CALCULATE([Denials by Reason], REMOVEFILTERS(dim_denial_reason))
+)
+
+// Reason mix is only meaningful where categories reconcile to reported totals.
+Denials by Reason (Reconciling Only) =
+CALCULATE([Denials by Reason], fact_denials[reason_reconciles] = TRUE())
+
+Preventable Denials =
+SUMX(
+    dim_denial_reason,
+    [Denials by Reason] * dim_denial_reason[preventability]
+)
+
+Appeal Effort Hours =
+SUMX(
+    dim_denial_reason,
+    [Denials by Reason] * dim_denial_reason[appealability]
+        * dim_denial_reason[effort_hours_per_appeal]
+)
+
+Denial Rate YoY =
+VAR Prior = CALCULATE([Denial Rate], dim_date[experience_year] = MAX(dim_date[experience_year]) - 1)
+RETURN [Denial Rate] - Prior
